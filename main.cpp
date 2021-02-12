@@ -10,6 +10,7 @@ void PlayerVSAI(tttBoard _board);
 void SaveBoard();
 void ReplayBoard();
 
+int board_count = 0;
 std::vector<AIMove> replay;
 
 int main()
@@ -26,8 +27,9 @@ int main()
 		{
 			std::cout << "3. Save Last Game" << std::endl;
 			std::cout << "4. Replay Last Game" << std::endl;
+			std::cout << "5. Boards Processed in Last Game" << std::endl;
 		}
-		std::cout << "5. Exit" << std::endl;
+		std::cout << "6. Exit" << std::endl;
 		std::cin >> response1;
 		tttBoard board;
 		switch (response1)
@@ -51,8 +53,11 @@ int main()
 		case 4:
 			ReplayBoard();
 			break;
-			}
 		case 5:
+			std::cout << board_count << " Boards were processed in that last game." << std::endl;
+			break;
+			}
+		case 6:
 			running = false;
 			break;
 		default:
@@ -97,6 +102,7 @@ void AIVSAI(tttBoard _board)
 	{
 		std::cout << "The game is a tie!" << std::endl;
 	}
+	board_count = AIX.getBoardCount() + AIO.getBoardCount();
 }
 
 void  PlayerVSAI(tttBoard _board)
@@ -134,6 +140,7 @@ void  PlayerVSAI(tttBoard _board)
 	{
 		std::cout << "The game is a tie!" << std::endl;
 	}
+	board_count = AI.getBoardCount();
 }
 
 void SaveBoard()

@@ -17,13 +17,16 @@ struct AIMove {
 class tttAI
 {
 public:
+	tttAI() : _boardCount(0) {};
 	void init(char AIPlayer);
 	AIMove performMove(tttBoard& __board);
 	AIMove getBestMove(tttBoard __board, char player, int depth);
+	int getBoardCount();
 private:
 	int _winValue;
 	int _lossValue;
 	char _aiPlayer;
 	char _humanPlayer;
+	int _boardCount;
 };
 

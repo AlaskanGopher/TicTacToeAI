@@ -11,7 +11,7 @@
 #define X_VAL 'X' // Changes X Value
 #define TIE_VAL 'T' // Changes T Value
 
-#define RECURSION_DEPTH 4 // recursive char[5][5] can fit in 8gb approx. 6.33467 DEPTH
+#define RECURSION_DEPTH 5 // recursive char[5][5] can fit in 8gb approx. 6.33467 DEPTH
 
 // X color
 //#define COLOR_BLUE "\x1b[1;36m"

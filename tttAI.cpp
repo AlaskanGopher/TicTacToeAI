@@ -20,7 +20,7 @@ AIMove tttAI::performMove(tttBoard& __board)
 
 AIMove tttAI::getBestMove(tttBoard __board, char player, int depth)
 {
-
+	_boardCount++;
 	// Base Case
 	char victory = __board.checkVict();
 	if (victory == _aiPlayer) {
@@ -94,4 +94,9 @@ AIMove tttAI::getBestMove(tttBoard __board, char player, int depth)
 		return moves[bestMove];
 	}
 	return 0;
+}
+
+int tttAI::getBoardCount()
+{
+	return _boardCount;
 }
